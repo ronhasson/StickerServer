@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>listing directory {directory}</title>
+    <script>
+		window.onerror = stoperror;
+		function stoperror() {
+			return true;
+		}
+		//console.log("hi")
+		document.addEventListener("DOMContentLoaded", function(event) {
+			var elements = document.getElementsByTagName("a");
+			//console.log(elements)
+			for(let a of elements){
+				//console.log(a)
+				let addr = a.href;
+				if(addr.slice(-5) == ".webp" || addr.slice(-4) == ".png"){
+					a.style.content = "url("+addr+")";
+					a.style.height = "auto";
+					a.style.width = "100%";
+				}
+				if(a.title == ".."){
+					a.style.height = "auto";
+					a.style.width = "100%";
+					a.style.fontSize = "30px";
+				}
+			}
+		});
+    </script>
+	<style>{style}</style>
+  </head>
+  <body class="directory">
+    <div id="wrapper">
+      <h1><a href="/">~</a>{linked-path}</h1>
+      {files}
+    </div>
+  </body>
+</html>

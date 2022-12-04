@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "start": "server.js",
     "dependencies": {
-        "express": "^4.16.2",
+        "express": "^4.17.3",
         "node-ipgeoblock": "^0.1.4",
         "serve-index": "^1.9.1",
         "tar-fs": "^1.16.3"
